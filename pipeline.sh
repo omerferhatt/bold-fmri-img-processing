@@ -1,5 +1,5 @@
+#!/usr/bin/env bash
 # must have both 'afni' and 'fsl' software packages installed to run
-
 # deoblique to get rid of warnings
 3dWarp -deoblique -prefix bold.nii.gz -overwrite bold.nii.gz
 # despike - remove large spikes in time series
