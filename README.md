@@ -80,67 +80,58 @@ Project has a couple of different workflow in it.
 * Only works with processed data
     * `python3 main.py --use-pre --batch-process`
 ---
-
-* Console input:
-`python3 main.py --help`
-
-* Console output: `BOLD fMRI Process [-h] [-p] [-u] [-l] [--pipeline PIPELINE]
-                  [-S SELECT_DATA [SELECT_DATA ...]]
-                  [--data-folder DATA_FOLDER]
-                  [--pre-data-folder PRE_DATA_FOLDER] [-i INPUT_FILE]
-                  [-o OUTPUT_FILE] [-e EVENT_FILE] [-H HRF_FILE]
-                  [-t TEMPLATE] [-b] [-v]`
-                  
----
-
 #### Arguments
 
-  `-h, --help`
-  * Shows help message
-  
-  `-p, --pre-process`
-  * Pre-process whole data in raw directory.
-  May take several hours according to the computer. 
-  Use the `--select-data` parameter to pre-process only the desired data
-                        
-  `-u, --use-pre`
-  * When the flag is activated, uses pre-processed data to localize faces.
-                        
-  `-l, --localize`
-  * Applies localize task activation to the MRI input
-  
-  `--pipeline PIPELINE`
-  * Specifies the path to the bash code that will create the pipeline, leave it as default to work normally.
-                        
-  `-S SELECT_DATA [SELECT_DATA ...], --select-data SELECT_DATA [SELECT_DATA ...]`
-  * Select data, otherwise all of them going to be used.
-                        
-  `--data-folder` DATA_FOLDER
-  * Specifies the path to the folder containing the raw data.
-                        
-  `--pre-data-folder` PRE_DATA_FOLDER
-  * Specifies the path to the folder where the processed data is located or to be saved after pre-processing.
-    
-  `-b, --batch_process`
-  * Applies linear alignment and registration with correlation into T1 image.
-  
-  `-v, --visualize-corr`
-  * Visualize different between processed and unprocessed data corr. Needs to be used with `--use-pre`
-                        
-  `-i INPUT_FILE, --input-file INPUT_FILE`
-  * Specifies the input MRI image file name
-  
-  `-o OUTPUT_FILE, --output-file OUTPUT_FILE`
-  * Specifies the output MRI image file name
-  
-  `-e EVENT_FILE, --event-file EVENT_FILE`
-  * Specifies the events file name
-  
-  `-H HRF_FILE, --hrf-file HRF_FILE`
-  * Specifies the HRF file name
-  
-  `-t TEMPLATE, --template TEMPLATE`
-  * Specifies the path to template T1 space, leave it as default to work normally.
-                        
+* Console input:
 
-  
+`python3 main.py --help`
+
+--- 
+`-h, --help`
+* Shows help message
+
+`-p, --pre-process`
+* Pre-process whole data in raw directory.
+May take several hours according to the computer. 
+Use the `--select-data` parameter to pre-process only the desired data
+                    
+`-u, --use-pre`
+* When the flag is activated, uses pre-processed data to localize faces.
+                    
+`-l, --localize`
+* Applies localize task activation to the MRI input
+
+`--pipeline PIPELINE`
+* Specifies the path to the bash code that will create the pipeline, leave it as default to work normally.
+                    
+`-S SELECT_DATA [SELECT_DATA ...], --select-data SELECT_DATA [SELECT_DATA ...]`
+* Select data, otherwise all of them going to be used.
+                    
+`--data-folder` DATA_FOLDER
+* Specifies the path to the folder containing the raw data.
+                    
+`--pre-data-folder` PRE_DATA_FOLDER
+* Specifies the path to the folder where the processed data is located or to be saved after pre-processing.
+
+`-b, --batch_process`
+* Applies linear alignment and registration with correlation into T1 image.
+
+`-v, --visualize-corr`
+* Visualize different between processed and unprocessed data corr. Needs to be used with `--use-pre`
+                    
+`-i INPUT_FILE, --input-file INPUT_FILE`
+* Specifies the input MRI image file name
+
+`-o OUTPUT_FILE, --output-file OUTPUT_FILE`
+* Specifies the output MRI image file name
+
+`-e EVENT_FILE, --event-file EVENT_FILE`
+* Specifies the events file name
+
+`-H HRF_FILE, --hrf-file HRF_FILE`
+* Specifies the HRF file name
+
+`-t TEMPLATE, --template TEMPLATE`
+* Specifies the path to template T1 space, leave it as default to work normally.
+                    
+
