@@ -12,32 +12,105 @@ We will work with the `Multisubject - Multimodal Face Processing Dataset` availa
 This dataset involves presentation of images of faces to the subject while acquiring BOLD fMRI images of the subject’s
 brain activity. Your job is to preprocess these scans and then, in python, localize the brain area that processes faces.
 
+
+##### Lectures
+* https://ensemble.ubishops.ca/hapi/v1/contents/permalinks/Ep5j4A9D/view
+* https://ensemble.ubishops.ca/hapi/v1/contents/permalinks/g8LWb96B/view
 ---
 
-### System Requirements
+#### System Requirements
 
 * Install both AFNI and FSL software packages on a Linux or Mac OS.
 * If you use Windows, please refer to NeuroDebian virtual machine from https://neuro.debian.net/
 * Python 3.7.x version preferred
-* Anaconda3 or Miniconda3 used as Python environment
 
----
 
-### Current System Specs
+##### Current System Specs
 
 * Ubuntu 18.04 64-bit OS
 * 16 GB RAM
 * 3.7 GHZ 4 Core
-* Single dataset: `~1GB`
-* Whole dataset: `~45GB`
-
----
-
+* Single run dataset: `~5GB`
+* Whole dataset: `~300GB`
 * `Python 3.7.6 64-bit` with Miniconda3
 * Framework requirements are in `requirements.txt` file
 
----
-
-### Installation steps:
+##### Installation steps:
 * Please follow this wiki guide to install both AFNI and FSL libraries:
 * http://miykael.github.io/nipype-beginner-s-guide/installation.html
+
+---
+
+## How to use
+Project has a couple of different workflow in it.
+
+* Folder manipulation
+* Pre-processing
+* Localizing
+* Visualizing
+
+---
+
+* Console input:
+`python3 main.py --help`
+
+* Console output: `BOLD fMRI Process [-h] [-p] [-u] [-l] [--pipeline PIPELINE]
+                  [-S SELECT_DATA [SELECT_DATA ...]]
+                  [--data-folder DATA_FOLDER]
+                  [--pre-data-folder PRE_DATA_FOLDER] [-i INPUT_FILE]
+                  [-o OUTPUT_FILE] [-e EVENT_FILE] [-H HRF_FILE]
+                  [-t TEMPLATE] [-b] [-v]`
+                  
+---
+
+#### Arguments
+
+  `-h, --help`
+  * Shows help message
+  
+  `-p, --pre-process`
+  * Pre-process whole data in raw directory.
+  May take several hours according to the computer. 
+  Use the `--select-data` parameter to pre-process only the desired data
+                        
+  `-u, --use-pre`
+  * When the flag is activated, uses pre-processed data to localize faces.
+                        
+  `-l, --localize`
+  * Applies localize task activation to the MRI input
+  
+  `--pipeline PIPELINE`
+  * Specifies the path to the bash code that will create the pipeline, leave it as default to work normally.
+                        
+  `-S SELECT_DATA [SELECT_DATA ...], --select-data SELECT_DATA [SELECT_DATA ...]`
+  * Select data, otherwise all of them going to be used.
+                        
+  `--data-folder` DATA_FOLDER
+  * Specifies the path to the folder containing the raw data.
+                        
+  `--pre-data-folder` PRE_DATA_FOLDER
+  * Specifies the path to the folder where the processed data is located or to be saved after pre-processing.
+    
+  `-b, --batch_process`
+  * Applies linear alignment and registration with correlation into T1 image.
+  
+  `-v, --visualize-corr`
+  * Visualize different between processed and unprocessed data corr. Needs to be used with `--use-pre`
+                        
+  `-i INPUT_FILE, --input-file INPUT_FILE`
+  * Specifies the input MRI image file name
+  
+  `-o OUTPUT_FILE, --output-file OUTPUT_FILE`
+  * Specifies the output MRI image file name
+  
+  `-e EVENT_FILE, --event-file EVENT_FILE`
+  * Specifies the events file name
+  
+  `-H HRF_FILE, --hrf-file HRF_FILE`
+  * Specifies the HRF file name
+  
+  `-t TEMPLATE, --template TEMPLATE`
+  * Specifies the path to template T1 space, leave it as default to work normally.
+                        
+
+  
