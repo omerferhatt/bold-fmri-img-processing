@@ -36,7 +36,7 @@ def create_parser():
     parser.add_argument('-t', '--template', default='template.nii.gz', type=str,
                         help='Specifies the path to template T1 space, '
                              'leave it as default to work normally.')
-    parser.add_argument('-b', '--batch_process', action='store_true')
+    parser.add_argument('-b', '--batch-process', action='store_true')
     parser.add_argument('-v', '--visualize-corr', action='store_true')
     args = parser.parse_args()
 

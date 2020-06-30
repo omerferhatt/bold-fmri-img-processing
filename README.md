@@ -51,6 +51,36 @@ Project has a couple of different workflow in it.
 
 ---
 
+##### Pre-processing usage
+* `python3 main.py --pre-process`
+    * Only pre-processing
+
+* `python3 main.py --pre-process --localize`
+    * Pre-processing after localization
+    
+* `python3 main.py --select-data patient01 patient02 --pre-process localize`
+    * Pre-processing and localization on only specified datas
+    
+##### Using previous pre-processed data
+* `python3 main.py --use-pre ...`
+    * Use `--use-pre` instead of `--pre-process to get avoid long process time
+    
+##### Localizing
+* Localizing raw data
+    * `python3 main.py --localize`
+
+* Localizing processed data
+    * `python3 main.py --use-pre --localize`
+    
+##### Visualizing correlations
+* Can visualize one dataset only
+    * `python3 main.py --select-data patient01 --use-pre --visualize-corr`
+
+##### Batch Processing
+* Only works with processed data
+    * `python3 main.py --use-pre --batch-process`
+---
+
 * Console input:
 `python3 main.py --help`
 
