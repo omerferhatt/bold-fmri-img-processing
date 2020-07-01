@@ -7,6 +7,7 @@ def preprocess(args, raw, processed):
         os.mkdir(processed)
     copytree(raw, processed)
     shutil.copyfile(args.pipeline, os.path.join(processed, 'pipeline.sh'))
+    shutil.copyfile(args.pipeline, os.path.join(processed, 'template.sh'))
     print(os.getcwd())
     os.chdir(processed)
     print('---------------------------------------------------------------------')

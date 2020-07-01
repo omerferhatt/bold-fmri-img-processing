@@ -12,10 +12,6 @@ We will work with the `Multisubject - Multimodal Face Processing Dataset` availa
 This dataset involves presentation of images of faces to the subject while acquiring BOLD fMRI images of the subject’s
 brain activity. Your job is to preprocess these scans and then, in python, localize the brain area that processes faces.
 
-
-##### Lectures
-* https://ensemble.ubishops.ca/hapi/v1/contents/permalinks/Ep5j4A9D/view
-* https://ensemble.ubishops.ca/hapi/v1/contents/permalinks/g8LWb96B/view
 ---
 
 #### System Requirements
@@ -78,7 +74,7 @@ Project has a couple of different workflow in it.
 
 ##### Batch Processing
 * Only works with processed data
-    * `python3 main.py --use-pre --batch-process`
+    * `python3 main.py --use-pre --localize --batch-process`
 ---
 #### Arguments
 

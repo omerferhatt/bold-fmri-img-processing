@@ -38,6 +38,8 @@ def create_parser():
                              'leave it as default to work normally.')
     parser.add_argument('-b', '--batch-process', action='store_true')
     parser.add_argument('-v', '--visualize-corr', action='store_true')
+    parser.add_argument('-g', '--group-avg', action='store_true')
+    # TODO add args to readme
     args = parser.parse_args()
 
     # To predict wrong situations before it happens

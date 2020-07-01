@@ -50,3 +50,23 @@ def localize(args, path):
     else:
         print('\n')
     os.chdir('../../..')
+
+
+def register_template(pre):
+    s = np.zeros((193, 229, 193))
+    count = 0
+    aff = np.zeros((4, 4))
+    for p in pre:
+        count += 1
+        os.chdir(p)
+        print(f'Registering {p} to template\n')
+        os.system('sh template.sh')
+        corr = nib.load('corr_in_template.nii.gz')
+        corr_data = corr.get_data()
+        aff += corr.affine
+        s += corr_data
+        os.chdir('../../..')
+    s /= count
+    aff /= count
+    avg_corr = nib.Nifti1Image(s, aff)
+    nib.save(avg_corr, 'data/global_avg_corr_in_template.nii.gz')

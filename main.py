@@ -33,6 +33,10 @@ if __name__ == "__main__":
                 localize(args, path)
             print('Localizing completed!')
 
+        if args.group_avg:
+            print('a')
+            register_template(pre_dir)
+
         if args.visualize_corr and (type(args.select_data) is list and len(args.select_data) == 1):
             for r, p in zip(raw_dir, pre_dir):
                 visualize(r, p)
