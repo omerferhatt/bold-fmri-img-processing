@@ -27,9 +27,9 @@ def visualize(raw_path, pre_path):
 
     raw_corr = raw_corr[:, :, start:stop]
     pre_corr = pre_corr[:, :, start:stop]
-    fig_raw, ax_raw = plt.subplots(r, c, figsize=(15, 15))
-    fig_pre, ax_pre = plt.subplots(r, c, figsize=(15, 15))
-    fig_over, ax_over = plt.subplots(r, c, figsize=(15, 15))
+    fig_raw, ax_raw = plt.subplots(r, c, figsize=(10, 10))
+    fig_pre, ax_pre = plt.subplots(r, c, figsize=(10, 10))
+    fig_over, ax_over = plt.subplots(r, c, figsize=(10, 10))
 
     for row in range(r):
         for col in range(c):
@@ -43,9 +43,9 @@ def visualize(raw_path, pre_path):
             ax_over[row, col].imshow(np.rot90(pre_corr[:, :, (row * r) + col]), alpha=0.6, cmap='magma')
             ax_over[row, col].axis('off')
 
-    fig_raw.savefig(os.path.join(pre_path, 'corr_raw.png'), dpi=600, bbox_inches='tight')
-    fig_pre.savefig(os.path.join(pre_path, 'corr_pre.png'), dpi=600, bbox_inches='tight')
-    fig_over.savefig(os.path.join(pre_path, 'corr_overlay.png'), dpi=600, bbox_inches='tight')
+    fig_raw.savefig(os.path.join(pre_path, 'corr_raw.png'), dpi=400, bbox_inches='tight')
+    fig_pre.savefig(os.path.join(pre_path, 'corr_pre.png'), dpi=400, bbox_inches='tight')
+    fig_over.savefig(os.path.join(pre_path, 'corr_overlay.png'), dpi=400, bbox_inches='tight')
 
     sys.exit(0)
 
